@@ -5,8 +5,8 @@ Version:	1.0.0
 Release:	1
 Summary:	Python 2 and 3 compatibility utilities
 Source0:	http://pypi.python.org/packages/source/s/%{oname}/%{oname}-%{version}.tar.gz
-License:	UNKNOWN
-Group:		Development/Libraries
+License:	MIT
+Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
 
