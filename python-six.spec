@@ -37,6 +37,12 @@ python setup.py install --root=%{buildroot}
 %{py_puresitedir}/six.py*
 %{py_puresitedir}/six*.egg-info
 
+
+
 %changelog
-* Thu Oct 21 2010 Alexandre Lissy <alissy@mandriva.com> 1.0.0-1
-- Initial release
+* Fri Aug 12 2011 Alexandre Lissy <alissy@mandriva.com> 1.0.0-1
++ Revision: 694205
+- Set correct license and group
+- Importing python-six module
+- Created package structure for 'python-six'.
+
