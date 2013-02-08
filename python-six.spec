@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.0.0
-Release:	1
+Release:	2
 Summary:	Python 2 and 3 compatibility utilities
 Source0:	http://pypi.python.org/packages/source/s/%{oname}/%{oname}-%{version}.tar.gz
 License:	MIT
@@ -20,8 +20,8 @@ Six supports Python 2.4+.
 
 Online documentation is at http://packages.python.org/six/.
 
-Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also be
-found there.
+Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
+be found there.
 
 %prep
 %setup -q -n %{oname}-%{version}
