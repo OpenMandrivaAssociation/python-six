@@ -1,2 +1,4 @@
+removed_sources:
+  six-1.0.0.tar.gz: befd2442a6ec5bfd20832ed975ebdaf9e570333b
 sources:
-  "six-1.0.0.tar.gz": befd2442a6ec5bfd20832ed975ebdaf9e570333b
+  six-1.4.1.tar.gz: b4cfd03344390d73d84349c815808358a128cc1d
