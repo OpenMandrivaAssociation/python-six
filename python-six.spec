@@ -2,13 +2,14 @@
 
 Name:		python-%{oname}
 Version:	1.4.1
-Release:	1
+Release:	2
 Summary:	Python 2 and 3 compatibility utilities
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
+BuildRequires:  python-devel
 
 %description
 Six is a Python 2 and 3 compatibility library.  It provides utility functions
@@ -23,27 +24,41 @@ Online documentation is at http://packages.python.org/six/.
 Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
 be found there.
 
+%package -n python3-six
+Summary: %{summary} / Python 3 library
+BuildRequires: python3-devel
+
+%description -n python3-six
+python-six provides simple utilities for wrapping over differences between
+Python 2 and Python 3.
+
 %prep
-%setup -q -n %{oname}-%{version}
+%setup -qc 
+mv %{oname}-%{version} python2
+cp -a python2 python3
 
 %build
+pushd python2
 python setup.py build
+popd
+
+pushd python3
+python3 setup.py build
+popd
 
 %install
+pushd python2
 python setup.py install --root=%{buildroot}
+popd
+
+pushd python3
+python3 setup.py install --root=%{buildroot}
+popd
 
 %files
-%doc README
-%{py_puresitedir}/six.py*
-%{py_puresitedir}/six*.egg-info
+%doc python2/LICENSE python2/README python3/documentation/index.rst
+%{py_puresitedir}/*
 
-
-
-%changelog
-* Fri Aug 12 2011 Alexandre Lissy <alissy@mandriva.com> 1.0.0-1
-+ Revision: 694205
-- Set correct license and group
-- Importing python-six module
-- Created package structure for 'python-six'.
-
-
+%files -n python3-six
+%doc python3/LICENSE python3/README python2/documentation/index.rst
+%{py3_puresitedir}/*
