@@ -1,9 +1,10 @@
 %define	oname	six
 
 Name:		python-%{oname}
-Version:	1.4.1
-Release:	2
+Version:	1.6.1
+Release:	1
 Summary:	Python 2 and 3 compatibility utilities
+
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
@@ -26,6 +27,7 @@ be found there.
 
 %package -n python3-six
 Summary: %{summary} / Python 3 library
+
 BuildRequires: python3-devel
 
 %description -n python3-six
@@ -62,3 +64,4 @@ popd
 %files -n python3-six
 %doc python3/LICENSE python3/README python2/documentation/index.rst
 %{py3_puresitedir}/*
+
