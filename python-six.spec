@@ -1,7 +1,7 @@
 %define	oname	six
 
 Name:		python-%{oname}
-Version:	1.6.1
+Version:	1.8.0
 Release:	1
 Summary:	Python 2 and 3 compatibility utilities
 
@@ -25,12 +25,12 @@ Online documentation is at http://packages.python.org/six/.
 Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
 be found there.
 
-%package -n python3-six
+%package -n python2-six
 Summary: %{summary} / Python 3 library
 
-BuildRequires: python3-devel
+BuildRequires: python2-devel
 
-%description -n python3-six
+%description -n python2-six
 python-six provides simple utilities for wrapping over differences between
 Python 2 and Python 3.
 
@@ -41,7 +41,7 @@ cp -a python2 python3
 
 %build
 pushd python2
-python setup.py build
+python2 setup.py build
 popd
 
 pushd python3
@@ -50,7 +50,7 @@ popd
 
 %install
 pushd python2
-python setup.py install --root=%{buildroot}
+python2 setup.py install --root=%{buildroot}
 popd
 
 pushd python3
@@ -58,10 +58,10 @@ python3 setup.py install --root=%{buildroot}
 popd
 
 %files
-%doc python2/LICENSE python2/README python3/documentation/index.rst
-%{py_puresitedir}/*
-
-%files -n python3-six
-%doc python3/LICENSE python3/README python2/documentation/index.rst
+%doc python3/LICENSE python3/README python3/documentation/index.rst
 %{py3_puresitedir}/*
+
+%files -n python2-six
+%doc python2/LICENSE python2/README python2/documentation/index.rst
+%{py2_puresitedir}/*
 
