@@ -10,6 +10,7 @@ License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
+BuildRequires:  python2-devel
 BuildRequires:  python-devel
 
 %description
@@ -41,7 +42,7 @@ cp -a python2 python3
 
 %build
 pushd python2
-python2 setup.py build
+%{__python2} setup.py build
 popd
 
 pushd python3
@@ -50,18 +51,17 @@ popd
 
 %install
 pushd python2
-python2 setup.py install --root=%{buildroot}
+%{__python2} setup.py install --root=%{buildroot}
 popd
 
 pushd python3
-python3 setup.py install --root=%{buildroot}
+%{__python} setup.py install --root=%{buildroot}
 popd
 
 %files
 %doc python3/LICENSE python3/README python3/documentation/index.rst
-%{py3_puresitedir}/*
+%{py_puresitedir}/*
 
 %files -n python2-six
 %doc python2/LICENSE python2/README python2/documentation/index.rst
 %{py2_puresitedir}/*
-
