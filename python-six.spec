@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.8.0
-Release:	2
+Release:	3
 Summary:	Python 2 and 3 compatibility utilities
 
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
@@ -60,8 +60,11 @@ popd
 
 %files
 %doc python3/LICENSE python3/README python3/documentation/index.rst
-%{py_puresitedir}/*
+%{py_puresitedir}/six-%{version}-*.egg-info
+%{py_puresitedir}/six.py*
+%{py_puresitedir}/__pycache__/*
 
 %files -n python2-six
 %doc python2/LICENSE python2/README python2/documentation/index.rst
-%{py2_puresitedir}/*
+%{py2_puresitedir}/six-%{version}-*.egg-info
+%{py2_puresitedir}/six.py*
