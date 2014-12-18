@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.8.0
-Release:	3
+Release:	4
 Summary:	Python 2 and 3 compatibility utilities
 
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
@@ -12,6 +12,8 @@ Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-devel
+BuildRequires:	python-setuptools
+BuildRequires:	python2-setuptools
 
 %description
 Six is a Python 2 and 3 compatibility library.  It provides utility functions
