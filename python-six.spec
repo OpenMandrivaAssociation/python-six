@@ -62,7 +62,6 @@ popd
 %doc python3/LICENSE python3/README python3/documentation/index.rst
 %{py_puresitedir}/six-%{version}-*.egg-info
 %{py_puresitedir}/six.py*
-%{py_puresitedir}/__pycache__/*
 
 %files -n python2-six
 %doc python2/LICENSE python2/README python2/documentation/index.rst
