@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.8.0
-Release:	7
+Release:	8
 Summary:	Python 2 and 3 compatibility utilities
 
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
