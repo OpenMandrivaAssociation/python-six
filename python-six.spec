@@ -1,8 +1,8 @@
-%define	oname	six
+%define	oname six
 
 Name:		python-%{oname}
-Version:	1.8.0
-Release:	8
+Version:	1.10.0
+Release:	1
 Summary:	Python 2 and 3 compatibility utilities
 
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
@@ -10,8 +10,8 @@ License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
-BuildRequires:  python2-devel
-BuildRequires:  python-devel
+BuildRequires:  pkgconfig(python2)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	python-setuptools
 BuildRequires:	python2-setuptools
 Provides:	python3egg(six)
@@ -30,9 +30,7 @@ Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
 be found there.
 
 %package -n python2-six
-Summary: %{summary} / Python 3 library
-
-BuildRequires: python2-devel
+Summary: %{summary} / Python 2 library
 
 %description -n python2-six
 python-six provides simple utilities for wrapping over differences between
@@ -49,7 +47,7 @@ pushd python2
 popd
 
 pushd python3
-python3 setup.py build
+%{__python} setup.py build
 popd
 
 %install
