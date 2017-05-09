@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.10.0
-Release:	3
+Release:	4
 Summary:	Python 2 and 3 compatibility utilities
 
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
