@@ -1,7 +1,7 @@
 %define	oname six
 
 Name:		python-%{oname}
-Version:	1.10.0
+Version:	1.11.0
 Release:	1
 Summary:	Python 2 and 3 compatibility utilities
 
@@ -37,7 +37,7 @@ python-six provides simple utilities for wrapping over differences between
 Python 2 and Python 3.
 
 %prep
-%setup -qc 
+%setup -qc
 mv %{oname}-%{version} python2
 cp -a python2 python3
 
@@ -60,11 +60,11 @@ pushd python3
 popd
 
 %files
-%doc python3/LICENSE python3/README python3/documentation/index.rst
+%doc python3/LICENSE python3/documentation/index.rst
 %{py_puresitedir}/six-%{version}-*.egg-info
 %{py_puresitedir}/six.py*
 
 %files -n python2-six
-%doc python2/LICENSE python2/README python2/documentation/index.rst
+%doc python2/LICENSE python2/documentation/index.rst
 %{py2_puresitedir}/six-%{version}-*.egg-info
 %{py2_puresitedir}/six.py*
