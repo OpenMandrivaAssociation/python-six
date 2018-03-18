@@ -4,13 +4,12 @@ Name:		python-%{oname}
 Version:	1.11.0
 Release:	2
 Summary:	Python 2 and 3 compatibility utilities
-
 Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
-BuildRequires:  pkgconfig(python2)
+BuildRequires:	pkgconfig(python2)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-setuptools
 BuildRequires:	python2-setuptools
@@ -30,7 +29,8 @@ Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
 be found there.
 
 %package -n python2-six
-Summary: %{summary} / Python 2 library
+Summary:	%{summary} / Python 2 library
+Group:		Development/Python
 
 %description -n python2-six
 python-six provides simple utilities for wrapping over differences between
@@ -42,27 +42,28 @@ mv %{oname}-%{version} python2
 cp -a python2 python3
 
 %build
-pushd python2
+cd python2
 %{__python2} setup.py build
-popd
+cd -
 
-pushd python3
+cd python3
 %{__python} setup.py build
-popd
+cd -
 
 %install
-pushd python2
+cd python2
 %{__python2} setup.py install --root=%{buildroot}
-popd
+cd -
 
-pushd python3
+cd python3
 %{__python} setup.py install --root=%{buildroot}
-popd
+cd -
 
 %files
 %doc python3/LICENSE python3/documentation/index.rst
 %{py_puresitedir}/six-%{version}-*.egg-info
 %{py_puresitedir}/six.py*
+%{py_puresitedir}/__pycache__/*.pyc
 
 %files -n python2-six
 %doc python2/LICENSE python2/documentation/index.rst
