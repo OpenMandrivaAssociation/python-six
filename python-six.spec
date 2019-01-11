@@ -1,10 +1,10 @@
 %define	oname six
 
 Name:		python-%{oname}
-Version:	1.11.0
-Release:	3
+Version:	1.12.0
+Release:	1
 Summary:	Python 2 and 3 compatibility utilities
-Source0:	http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
+Source0:	http://pypi.io/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
@@ -43,20 +43,20 @@ cp -a python2 python3
 
 %build
 cd python2
-%{__python2} setup.py build
+python setup.py build
 cd -
 
 cd python3
-%{__python} setup.py build
+python setup.py build
 cd -
 
 %install
 cd python2
-%{__python2} setup.py install --root=%{buildroot}
+python setup.py install --root=%{buildroot}
 cd -
 
 cd python3
-%{__python} setup.py install --root=%{buildroot}
+python setup.py install --root=%{buildroot}
 cd -
 
 %files
