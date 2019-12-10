@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.13.0
-Release:	1
+Release:	2
 Summary:	Python 2 and 3 compatibility utilities
 Source0:	https://files.pythonhosted.org/packages/94/3e/edcf6fef41d89187df7e38e868b2dd2182677922b600e880baad7749c865/six-1.13.0.tar.gz
 License:	MIT
