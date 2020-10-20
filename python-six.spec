@@ -2,9 +2,9 @@
 
 Name:		python-%{oname}
 Version:	1.15.0
-Release:	1
+Release:	2
 Summary:	Python 2 and 3 compatibility utilities
-Source0:	https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
