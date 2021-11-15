@@ -1,10 +1,10 @@
 %define	oname six
 
 Name:		python-%{oname}
-Version:	1.15.0
-Release:	2
+Version:	1.16.0
+Release:	1
 Summary:	Python 2 and 3 compatibility utilities
-Source0:	https://files.pythonhosted.org/packages/source/s/six/six-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
