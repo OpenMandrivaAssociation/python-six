@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.16.0
-Release:	1
+Release:	2
 Summary:	Python 2 and 3 compatibility utilities
 Source0:	https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz
 License:	MIT
@@ -63,7 +63,6 @@ cd -
 %doc python3/LICENSE python3/documentation/index.rst
 %{py_puresitedir}/six-%{version}-*.egg-info
 %{py_puresitedir}/six.py*
-%{py_puresitedir}/__pycache__/*.pyc
 
 %files -n python2-six
 %doc python2/LICENSE python2/documentation/index.rst
