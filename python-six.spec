@@ -2,17 +2,15 @@
 
 Name:		python-%{oname}
 Version:	1.16.0
-Release:	2
+Release:	3
 Summary:	Python 2 and 3 compatibility utilities
-Source0:	https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/six/
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python2)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-setuptools
-BuildRequires:	python2-setuptools
 Provides:	python3egg(six)
 
 %description
@@ -28,43 +26,15 @@ Online documentation is at http://packages.python.org/six/.
 Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
 be found there.
 
-%package -n python2-six
-Summary:	%{summary} / Python 2 library
-Group:		Development/Python
-
-%description -n python2-six
-python-six provides simple utilities for wrapping over differences between
-Python 2 and Python 3.
-
 %prep
-%setup -qc
-mv %{oname}-%{version} python2
-cp -a python2 python3
+%setup -n six-%{version}
 
 %build
-cd python2
-%{__python2} setup.py build
-cd -
-
-cd python3
-%{__python} setup.py build
-cd -
+%py_build
 
 %install
-cd python2
-%{__python2} setup.py install --root=%{buildroot}
-cd -
-
-cd python3
-%{__python} setup.py install --root=%{buildroot}
-cd -
+%py_install
 
 %files
-%doc python3/LICENSE python3/documentation/index.rst
 %{py_puresitedir}/six-%{version}-*.egg-info
 %{py_puresitedir}/six.py*
-
-%files -n python2-six
-%doc python2/LICENSE python2/documentation/index.rst
-%{py2_puresitedir}/six-%{version}-*.egg-info
-%{py2_puresitedir}/six.py*
