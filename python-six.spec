@@ -7,7 +7,7 @@ Summary:	Python 2 and 3 compatibility utilities
 Source0:	https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
-Url:		http://pypi.python.org/pypi/six/
+Url:		https://pypi.python.org/pypi/six/
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-setuptools
