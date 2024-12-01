@@ -2,16 +2,15 @@
 
 Name:		python-%{oname}
 Version:	1.16.0
-Release:	6
+Release:	7
 Summary:	Python 2 and 3 compatibility utilities
-Source0:	https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		https://pypi.python.org/pypi/six/
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python)
-BuildRequires:	python-setuptools
 Provides:	python3egg(six)
+BuildSystem:	python
 
 %description
 Six is a Python 2 and 3 compatibility library.  It provides utility functions
@@ -27,13 +26,7 @@ Bugs can be reported to http://bitbucket.org/gutworth/six.  The code can also
 be found there.
 
 %prep
-%setup -n six-%{version}
-
-%build
-%py_build
-
-%install
-%py_install
+%autosetup -p1 -n six-%{version}
 
 %files
 %{py_puresitedir}/six-%{version}-*.egg-info
