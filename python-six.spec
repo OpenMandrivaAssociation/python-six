@@ -31,4 +31,4 @@ be found there.
 %files
 %{py_puresitedir}/six-%{version}-*.egg-info
 %{py_puresitedir}/six.py*
-%{py_puresitedir}/__pycache__/six.*
+#{py_puresitedir}/__pycache__/six.*
