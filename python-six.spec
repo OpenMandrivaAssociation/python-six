@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	1.17.0
-Release:	2
+Release:	3
 Summary:	Python 2 and 3 compatibility utilities
 Source0:	https://files.pythonhosted.org/packages/source/s/six/six-%{version}.tar.gz
 License:	MIT
